@@ -1,0 +1,56 @@
+==================================================
+  OCEANEMBED FASTAPI BACKEND REPORT
+==================================================
+
+BACKEND DIRECTORY:
+/Users/oshinmendhe10gmail.com/Desktop/OceanEmbed_Backend
+
+DATA ROOT:
+/Users/oshinmendhe10gmail.com/Desktop/CLEAN DATA/OceanEmbed_Processed
+
+MODEL PATH:
+/Users/oshinmendhe10gmail.com/Desktop/CLEAN DATA/OceanEmbed_Processed/oceanembed_cnn_best.pt
+
+NORMALIZATION PATH:
+/Users/oshinmendhe10gmail.com/Desktop/CLEAN DATA/OceanEmbed_Processed/normalization_stats.json
+
+ZARR DATASETS USED:
+- SST_0.25deg_daily.zarr
+- SSS_0.25deg_daily.zarr
+- SSH_0.25deg_daily.zarr
+- Current_UV_0.25deg_daily.zarr
+- Wind_UV_0.25deg_daily.zarr
+
+HARDWARE / STATUS:
+- Device: mps (fallback: cpu)
+- Model automatically loaded on startup: YES
+- PyTorch No-Grad Inference: ENABLED
+
+ENDPOINTS:
+- GET /health
+- POST /predict
+- GET /profile
+- GET /surface
+- GET /metrics
+- GET /validation/argo
+
+TEST RESULTS:
+All 5 pytest cases PASSED successfully:
+- test_health
+- test_predict_valid
+- test_predict_invalid_date
+- test_predict_out_of_bounds
+- test_metrics
+
+KNOWN PREDICTION TEST RESULT (2025-01-15, Lat: 18.5, Lon: 88.0):
+HTTP 200 OK. Returned exactly 15 valid physical temperatures from 0m to 1000m.
+
+STARTUP COMMAND:
+uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+API ACCESS:
+Base URL: http://127.0.0.1:8000
+Swagger Docs: http://127.0.0.1:8000/docs
+ReDoc: http://127.0.0.1:8000/redoc
+
+FINAL STATUS: READY — OCEANEMBED FASTAPI BACKEND

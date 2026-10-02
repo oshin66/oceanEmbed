@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "supabase-mcp-server": {
+      "serverUrl": "https://xgdzyqfalbibzelpdpvr.supabase.co/functions/v1/mcp"
+    }
+  }
+}
